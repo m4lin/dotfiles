@@ -9,5 +9,4 @@ containing config dot files for:
 4) Waybar
 5) Hikari WM
 
-lazygit
-gopass
+test2
