@@ -1,0 +1,152 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Source Code Pro", "Material Design Icons Desktop, Regular", "Iosevka Nerd Font Mono";
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+#tags {
+	background-color: #000000;
+	margin: 5px;
+	margin-left: 10px;
+        margin-bottom: 0px;
+	border-radius: 20px;
+}
+#tags button {
+    padding: 5px 10px;
+    color: #c0caf5;
+}
+
+#tags button.focused {
+    color: #24283b;
+    background-color: #7aa2f7;
+    border-radius: 20px;
+}
+
+#tags button:hover {
+	background-color: #c0caf5;
+	color: #c0caf5;
+	border-radius: 20px;
+}
+
+#custom-weather_num, #custom-weather_icon, #custom-space, #tray, #clock, #battery,#cpu {
+	background-color: #000000;
+	padding: 0px 10px;
+	margin: 5px 0px;
+        margin-bottom: 0px;
+}
+
+#custom-weather_icon {
+  color: #E6DF22;
+  font-size: 19px;
+  padding-right: 0;
+}
+
+#custom-weather_num {
+  color: #E6DF22;
+}
+
+#cpu {
+  color: #1b609b;
+  border-radius: 20px 0px 0px 20px;
+}
+#mpd {
+  color: #c0caf5;
+  border-radius: 0px 20px 20px 0px;
+  padding-right: 9;
+
+}
+#mpd, #custom-mpd-next, #custom-mpd-prev, #custom-mpd-toggle {
+	background-color: #000000;
+	padding: 2px 3px;
+	margin: 5px 0px;
+        margin-bottom: 0px;
+}
+#custom-mpd-toggle {
+        font-size: 19;
+	color: #9ece6a;
+}
+#custom-mpd-prev {
+        color: #e0af68;
+	border-radius: 20px 0px 0px 20px;
+        padding-left: 9;
+}
+#custom-mpd-next {
+        color: #e0af68;
+}
+
+#clock {
+    color: #7dcfff;
+    padding: 0px 0px;
+}
+
+#tray {
+  font-size: 0;
+  margin-right: 0;
+  border-radius: 0px 0px 0px 0px;
+  padding-right: 0;
+}
+
+#tray menu{
+  background-color: #1E222A;
+  border-radius: 7px;
+  color: #B7B5B4;
+}
+
+#custom-space {
+  font-size: 0px;
+  border-radius: 0px 20px 20px 0px;
+  margin-right: 10px;
+}
+
+#battery {
+    color: #9ece6a;
+}
+
+#battery.charging {
+    color: #9ece6a;
+}
+
+#battery.warning:not(.charging) {
+    color: #8b0000;
+}
+
+#custom-network {
+	background-color: #000000;
+	margin: 5px 0px;
+        margin-bottom: 0px;
+	color: #f7768e;
+        padding-right: 10px;
+}
+#custom-network-icon {
+	background-color: #000000;
+	color: #f7768e;
+	padding: 0px 10px;
+	margin: 5px 0px;
+        margin-bottom: 0px;
+        font-size: 18px;
+}
+
+#pulseaudio {
+	background-color: #000000;
+	padding: 0px 0px;
+	margin: 5px 0px;
+        margin-bottom: 0px;
+	color: #e0af68;
+}
+
+#pulseaudio.pulse2 {
+        font-size: 18px;
+	background-color: #000000;
+	margin: 5px 0px;
+        margin-bottom: 0px;
+	color: #e0af68;
+}
+
+
