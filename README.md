@@ -1,3 +1,9 @@
 # dotfiles
 my dot files between Void and Devoid
-test 1
+
+containing config dot files for:
+
+1) foot Terminal
+2) River WM
+3) Sway WM
+4) Waybar
