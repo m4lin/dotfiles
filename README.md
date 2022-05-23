@@ -8,3 +8,5 @@ containing config dot files for:
 3) Sway WM
 4) Waybar
 5) Hikari WM
+
+test2
