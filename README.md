@@ -7,3 +7,4 @@ containing config dot files for:
 2) River WM
 3) Sway WM
 4) Waybar
+5) Hikari WM
