@@ -1,6 +1,8 @@
 # TODO List
 
-1. configure Hikari and River
+1. configure foot on both machines
+  - [x] font??
+2. configure Hikari and River
   - [] Hikari on Void
   - [x] installed
   - [] configured
@@ -12,4 +14,4 @@
    
   - [] Use same waybar configuration on both
 
-2. 
+3. 
