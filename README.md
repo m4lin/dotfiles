@@ -14,4 +14,15 @@
    
   - [] Use same waybar configuration on both
 
-3. test2 
+3. test2
+
+
+software
+
+eww widgets
+khal ikhal calendar
+starship shel prompt for bash and zsh
+weechat matrix
+discord
+
+
