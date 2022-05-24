@@ -14,4 +14,4 @@
    
   - [] Use same waybar configuration on both
 
-3. test 
+3. test2 
