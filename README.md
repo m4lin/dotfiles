@@ -89,6 +89,11 @@ https://voidlinux.org/news/2014/01/Using-the-Nix-package-manager.html
 configure nix (for user) channels and home-manager
 https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix
 
+home-manager
+https://nix-community.github.io/home-manager/
+
+nix pills
+https://nixos.org/guides/nix-pills/index.html
 
 home.nix
 
