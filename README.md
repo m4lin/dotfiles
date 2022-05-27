@@ -46,3 +46,58 @@ Legend:
 | +42     | this many staged changes                                          | git status                                           |
 | !42     | this many unstaged changes                                        | git status                                           |
 | ?42     | this many untracked files    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NIX how to (ON VOID LINUX)
+
+install nix package and start service
+https://voidlinux.org/news/2014/01/Using-the-Nix-package-manager.html
+
+configure nix (for user) channels and home-manager
+https://ghedam.at/24353/tutorial-getting-started-with-home-manager-for-nix
+
+
+home.nix
+
+
+
+videos
+
+https://www.youtube.com/watch?v=eW8KU6h_ZNo&ab_channel=47Degrees
+https://www.youtube.com/watch?v=494zlooD7Tg&ab_channel=47Degrees
+
+nixology
+https://www.youtube.com/playlist?list=PLRGI9KQ3_HP_OFRG6R-p4iFgMSK1t5BHs
