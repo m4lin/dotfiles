@@ -97,7 +97,8 @@ https://nixos.org/guides/nix-pills/index.html
 
 home.nix
 
-
+garbage collector
+https://nixos.org/manual/nix/stable/package-management/garbage-collection.html
 
 videos
 
