@@ -1,0 +1,245 @@
+# Typical laptop setup, with wifi, brightness, battery etc, for
+# i3/Sway.
+
+# For X11/i3, you'll want to replace calls to swaymsg with i3-msg, and
+# the sway-xkb module with the xkb module.
+
+# fonts we'll be re-using here and there
+awesome: &awesome Font Awesome 5 Free:style=solid:pixelsize=14
+awesome_brands: &awesome_brands Font Awesome 5 Brands:pixelsize=16
+
+std_underline: &std_underline {underline: { size: 2, color: 00ffffff}}
+
+# This is THE bar configuration
+bar:
+  height: 26
+  location: bottom
+  spacing: 5
+  margin: 7
+
+  # Default font
+  font: Monospace:pixelsize=16:style=bold
+
+  foreground: fbfac7ff
+  background: 282828ff
+
+  border:
+    width: 2
+    color: 076678cc
+    margin: 0
+    top-margin: 0
+
+  left:
+    - label:
+        content:
+          string:
+            on-click: wofi --show=drun -I --location=7
+            text: 
+            foreground: 1491CEff
+            font: Monospace:pixelsize=20
+            
+    - removables:
+        anchors:
+          drive: &drive { text: , font: *awesome}
+          optical: &optical {text: , font: *awesome}
+        spacing: 5
+        content:
+          map:
+            tag: mounted
+            values:
+              false:
+                map:
+                  tag: optical
+                  on-click: menumount
+                  values:
+                    false: [{string: *drive}, {string: {text: "{label}"}}]
+                    true: [{string: *optical}, {string: {text: "{label}"}}]
+              true:
+                map:
+                  tag: optical
+                  on-click: pcmanfm-qt /mnt/"{label}"
+                  values:
+                    false:
+                      - string: {<<: *drive, deco: *std_underline}
+                      - string: {text: "{label}"}
+                    true:
+                      - string: {<<: *optical, deco: *std_underline}
+                      - string: {text: "{label}"}                     
+  center:
+    - clock:
+        time-format: "%H:%M"
+        date-format: "%d %b %Y"
+        content:
+          - string: {text: , font: *awesome, foreground: 689d6aff}
+          - string: {text: "{date}", right-margin: 5, foreground: 689d6aff}
+          - string: {text: , font: *awesome}
+          - string: {text: "{time}"}
+
+  
+
+  #   - mpd:
+  #       host: /home/mzeinali/.config/mpd/socket
+  #       anchors:
+  #         list: &artist_album_title
+  #           spacing: 0
+  #           items:
+  #             - map:
+  #                 tag: state
+  #                 values:
+  #                   playing: {string: {text: "{artist}"}}
+  #                   paused: {string: {text: "{artist}", foreground: ffffff66}}
+  #             - string: {text: " | ", foreground: ffffff66}
+  #             - map:
+  #                 tag: state
+  #                 values:
+  #                   playing: {string: {text: "{album}"}}
+  #                   paused: {string: {text: "{album}", foreground: ffffff66}}
+  #             - string: {text: " | ", foreground: ffffff66}
+  #             - map:
+  #                 tag: state
+  #                 values:
+  #                   playing: {string: {text: "{title}", foreground: ffa0a0ff}}
+  #                   paused: {string: {text: "{title}", foreground: ffffff66}}
+  #       content:
+  #         map:
+  #           margin: 10
+  #           tag: state
+  #           values:
+  #             offline: {string: {text: offline, foreground: ff0000ff}}
+  #             stopped: {string: {text: stopped}}
+  #             paused: {list: *artist_album_title}
+  #             playing: {list: *artist_album_title}
+
+  right:
+    
+
+    # - network:
+    #     name: enp1s0
+    #     content:
+    #       map:
+    #         tag: carrier
+    #         values:
+    #           false: {empty: {}}
+    #           true:
+    #             map:
+    #               tag: state
+    #               default: {string: {text: , font: *awesome, foreground: ffffff66}}
+    #               values:
+    #                 up:
+    #                   map:
+    #                     tag: ipv4
+    #                     default: {string: {text: , font: *awesome}}
+    #                     values:
+    #                       "": {string: {text: , font: *awesome, foreground: ffffff66}}
+
+    # - script:
+    #     path: /home/mzeinali/.config/yambar/pacman
+    #     args: [] 
+    #     content:
+    #       map:
+    #         tag: pkg
+    #         default: { string: { text: " {pacman} +  {aur} = {pkg}" } }
+    #         values:
+    #           0: {string: {text: }}
+
+    - network:
+        name: wlp2s0
+        content:
+          map:
+            tag: state
+            default: {string: {text: , font: *awesome, foreground: ffffff66}}
+            values:
+              down: {string: {text: , font: *awesome, foreground: ff0000ff}}
+              up:
+                map:
+                  tag: ipv4
+                  default:
+                    - string: {text: , font: *awesome, foreground: 98971aff}
+                    - string: {text: "{ssid}", foreground: 98971aff}
+                  values:
+                    "":
+                      - string: {text: , font: *awesome, foreground: 98971aff}
+                      - string: {text: "{ssid}", foreground: 98971aff}
+
+    - alsa:
+        card: hw:0
+        mixer: Master
+        content:
+          map:
+            # on-click: /bin/sh -c "amixer -q sset Speaker unmute && amixer -q sset Headphone unmute && amixer -q sset Master toggle"
+            on-click: /bin/sh -c "pulsemixer --toggle-mute"
+            tag: muted
+            values:
+              true: {string: {text: , font: *awesome, foreground: ffffff66}}
+              false:
+                - ramp:
+                    tag: volume
+                    items:
+                      - string: {text: , font: *awesome, foreground: 458588ff}
+                      - string: {text: , font: *awesome, foreground: 458588ff}
+                      - string: {text: , font: *awesome, foreground: 458588ff}
+                      - string: {text: , font: *awesome, foreground: 458588ff}
+                      - string: {text: , font: *awesome, foreground: 458588ff} 
+                - string: {text: "{percent}%", foreground: 458588ff}
+    - backlight:
+        name: intel_backlight
+        content: [ string: {text: , font: *awesome, foreground: D79921FF}, string: {text: "{percent}%", foreground: D79921FF}]
+    - battery:
+        name: BAT0
+        poll-interval: 30
+        content:
+          map:
+            tag: state
+            values:
+              discharging:
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text: , foreground: ff0000ff, font: *awesome}
+                      - string: {text: , foreground: ffa600ff, font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , font: *awesome}
+                      - string: {text: , foreground: 00ff00ff, font: *awesome}
+                - string: {text: "{capacity}% {estimate}"}
+              charging:
+                - string: {text: , foreground: 00ff00ff, font: *awesome}
+                - string: {text: "{capacity}% {estimate}"}
+              full:
+                - string: {text: , foreground: 00ff00ff, font: *awesome}
+                - string: {text: "{capacity}% full"}
+              not charging:
+                - ramp:
+                    tag: capacity
+                    items:
+                      - string: {text:  , foreground: ff0000ff, font: *awesome}
+                      - string: {text:  , foreground: ffa600ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                      - string: {text:  , foreground: 00ff00ff, font: *awesome}
+                - string: {text: "{capacity}%"}
+
+    - sway-xkb:
+        identifiers: [1:1:AT_Translated_Set_2_keyboard]
+        content:
+          - string: {text: , font: *awesome, foreground: D16286FF}
+          - string: {text: "it", foreground: D16286FF}
+
+    - label:
+        content:
+          string:
+            on-click: /home/marco/.config/yambar/powermenu.sh
+            text: 
+            font: *awesome
+            foreground: CC241DFF
+
+

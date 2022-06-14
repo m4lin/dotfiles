@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu>
+<menu id="client-menu" label="ClientMenu">
+	<item label="Minimize">
+		<action name="Iconify" />
+	</item>
+	<item label="Maximize">
+		<action name="ToggleMaximize" />
+	</item>
+	<item label="Fullscreen">
+		<action name="ToggleFullscreen" />
+	</item>
+	<item label="Decorations">
+		<action name="ToggleDecorations" />
+	</item>
+	<item label="AlwaysOnTop">
+		<action name="ToggleAlwaysOnTop" />
+	</item>
+	<item label="Close">
+		<action name="Close" />
+	</item>
+</menu>
+<menu id="root-menu" label="">
+  <item label="Web browser">
+    <action name="Execute"><command>firefox</command></action>
+  </item>
+  <item label="Text Editor">
+    <action name="Execute"><command>featherpad</command></action>
+  </item>
+  <item label="File Manager">
+    <action name="Execute"><command>pcmanfm-qt</command></action>
+  </item>
+  <item label="Htop">
+    <action name="Execute"><command>st htop</command></action>
+  </item>
+  <item label="Terminal">
+    <action name="Execute"><command>st</command></action>
+  </item>
+    <item label="OctoXBPS">
+    <action name="Execute"><command>octoxbps</command></action>
+  </item>
+  <item label="Reconfigure">
+    <action name="Reconfigure"></action>
+  </item>
+  <item label="Exit">
+    <action name="Exit"></action>
+  </item>
+
+</menu>
+
+</openbox_menu>

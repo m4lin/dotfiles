@@ -1,0 +1,26 @@
+---
+driver=<class 'textual._linux_driver.LinuxDriver'>
+Load() >>> TiptopApp(title='Textual')
+Mount() >>> TiptopApp(title='Textual Application')
+Mount() >>> DockView(name='DockView#1')
+Mount() >>> View(name='View#1')
+Mount() >>> InfoLine(name='InfoLine#1')
+Mount() >>> CPU(name='CPU#1')
+Mount() >>> Mem(name='Mem#1')
+Mount() >>> Net(name='Net#1')
+Mount() >>> ProcsList(name='ProcsList#1')
+view.forwarded Key(key='q')
+Key(key='q') >>> TiptopApp(title='Textual Application')
+ACTION TiptopApp(title='Textual Application') quit
+CLOSED TiptopApp(title='Textual Application')
+PROCESS END
+CLOSED View(name='View#1')
+CLOSED Mem(name='Mem#1')
+CLOSED DockView(name='DockView#1')
+CLOSED ProcsList(name='ProcsList#1')
+CLOSED InfoLine(name='InfoLine#1')
+CLOSED CPU(name='CPU#1')
+CLOSED Net(name='Net#1')
+disable_input elapsed 0.03ms
+tcsetattr elapsed 0.07ms
+set_alt_screen False, show cursor elapsed 1.03ms
