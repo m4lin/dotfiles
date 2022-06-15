@@ -13,7 +13,6 @@ MOZ_ENABLE_WAYLAND=1
 # Set cursor theme.
 # Find icons themes with the command below or similar:
 #     find /usr/share/icons/ -type d -name "cursors"
-XCURSOR_THEME=breeze_cursors
 
 # Disable hardware cursors. Most users wouldn't want to do this, but if you
 # are experiencing issues with disappearing cursors, this might fix it.
@@ -23,3 +22,4 @@ WLR_NO_HARDWARE_CURSORS=1
 # to avoid menus with incorrect offset and blank windows
 # See https://github.com/swaywm/sway/issues/595
 #_JAVA_AWT_WM_NONREPARENTING=1
+XCURSOR_THEME=DeppinWhite-cursors

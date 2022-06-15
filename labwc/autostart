@@ -21,7 +21,7 @@ swaybg -i /home/marco/bg2.jpg
 #   }
 #kanshi >/dev/null 2>&1 &
 
-
+dbus-run-session -- bash &
 
 # Enable notifications. Typically GNOME/KDE application notifications go
 # through the org.freedesktop.Notifications D-Bus API and require a client such
@@ -40,3 +40,7 @@ swayidle -w \
 	timeout 600 'wlopm --off \*' \
 	resume 'wlopm --on \*' \
 	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
+
+# Start devmon
+devmon&
+

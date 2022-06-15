@@ -1,10 +1,11 @@
 # TODO List
 
+including wofi menus
 
 1. configure foot on both machines
   - [x] font??
 2. configure Hikari and River
-  - [x] Labwc, installed and functional
+  - [x] Labwc, installed and functional, updated
   - [] Hikari on Void
   - [x] installed
   - [] configured
