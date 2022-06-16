@@ -8,36 +8,14 @@
 awesome: &awesome Font Awesome 5 Free:style=solid:pixelsize=14
 awesome_brands: &awesome_brands Font Awesome 5 Brands:pixelsize=16
 
-# https://www.nordtheme.com/docs/colors-and-palettes
-.nord_colors:
-  0:  &nord0  2e3440ff
-  1:  &nord1  3b4252ff
-  2:  &nord2  434c5eff
-  3:  &nord3  4c566aff
-  4:  &nord4  d8dee9ff
-  5:  &nord5  e5e9f0ff
-  6:  &nord6  eceff4ff
-  7:  &nord7  8fbcbbff
-  8:  &nord8  88c0d0ff
-  9:  &nord9  81a1c1ff
-  10: &nord10 5e81acff
-  11: &nord11 bf616aff
-  12: &nord12 d08770ff
-  13: &nord13 ebcb8bff
-  14: &nord14 a3be8cff
-  15: &nord15 b48eadff
-
 std_underline: &std_underline {underline: { size: 2, color: 00ffffff}}
 
 # This is THE bar configuration
-
 bar:
   height: 26
   location: bottom
   spacing: 5
   margin: 7
-  monitor: eDP-1
-#  monitor: HDMI-A-1
 
   # Default font
   font: Monospace:pixelsize=16:style=bold
@@ -45,8 +23,8 @@ bar:
 # foreground: fbfac7ff
 # background: 282828ff
 
-  foreground: *nord0
-  background: *nord6
+  foreground: fbfac7ff
+  background: 282828ff
 
   border:
     width: 2

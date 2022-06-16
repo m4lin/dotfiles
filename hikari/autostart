@@ -1,0 +1,8 @@
+#!/bin/bash 
+#export LC_ALL="C" 
+#wofi --show=drun --allow-images
+kitty&
+#waybar&
+yambar&
+
+exit 0

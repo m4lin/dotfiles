@@ -98,6 +98,9 @@
     <keybind key="XF86_MonBrightnessDown">
       <action name="Execute"><command>brightnessctl set 10%-</command></action>
     </keybind>
+    <keybind key="C-Tab">
+      <action name="Execute"><command>killall -s SIGUSR1 sfwbar</command></action>
+    </keybind>
   </keyboard>
 
 

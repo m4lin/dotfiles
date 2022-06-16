@@ -3,6 +3,7 @@
 # Launch a panel such as yambar or waybar.
 #waybar >/dev/null 2>&1 &
 yambar &
+sfwbar &
 
 # Set background color.
 #swaybg -c '#113344' >/dev/null 2>&1 &
@@ -20,8 +21,6 @@ swaybg -i /home/marco/bg2.jpg
 #     output eDP-1 position 0,0
 #   }
 #kanshi >/dev/null 2>&1 &
-
-dbus-run-session -- bash &
 
 # Enable notifications. Typically GNOME/KDE application notifications go
 # through the org.freedesktop.Notifications D-Bus API and require a client such

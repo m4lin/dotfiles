@@ -25,8 +25,12 @@
   <item label="Web browser">
     <action name="Execute"><command>chromium</command></action>
   </item>
+	  <item label="Email">
+    <action name="Execute"><command>/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=start-mailspring --file-forwarding com.getmailspring.Mailspring @@u %U @@ 
+</command></action>
+  </item>
   <item label="Text Editor">
-    <action name="Execute"><command>featherpad</command></action>
+    <action name="Execute"><command>notepadqq</command></action>
   </item>
   <item label="File Manager">
     <action name="Execute"><command>pcmanfm</command></action>
@@ -39,6 +43,9 @@
   </item>
     <item label="OctoXBPS">
     <action name="Execute"><command>octoxbps</command></action>
+  </item>
+   <item label="Labwc-tweaks">
+    <action name="Execute"><command>labwc-tweaks</command></action>
   </item>
   <item label="Reconfigure">
     <action name="Reconfigure"></action>

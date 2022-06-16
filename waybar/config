@@ -1,130 +1,105 @@
 {
-    "position": "top", 
-    "height": 30,
-    "modules-left": ["river/tags"],
-    "modules-center": ["custom/mpd-prev","custom/mpd-toggle","custom/mpd-next","mpd"],
-    "modules-right": ["cpu","custom/weather_icon","custom/weather_num","custom/network-icon","custom/network","pulseaudio#pulse2","pulseaudio", "battery", "custom/date", "clock","tray","custom/space"],
+    "layer": "top",
+    "position": "bottom",
+    "height": 35,
+    "spacing": 4,
+    "margin-top": 5,
+    "margin-bottom": 10,
 
-    "river/tags": {
-      "num-tags": 9
+    // Choose the order of the modules
+
+    "modules-center": ["custom/launcher", "sway/workspaces", "custom/media", "idle_inhibitor",  "custom/updater", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2",  "tray", "clock", "custom/power"],
+
+    // Modules configuration
+
+     "sway/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": false,
+         "format": "{name}"
     },
-
-    "custom/weather_icon": {
-        "format": "{}",
-        "interval": 3600,
-        "exec": "ping -c 3 archlinux.org >> /dev/null && icon.sh"
-    },  
-
-    "custom/weather_num": {
-        "format": "{}°C",
-        "interval": 3600,
-        "exec": "ping -c 3 archlinux.org >> /dev/null && temp.sh",
-        "states": {
-          "hot": 33,
-          "nice": 23,
-          "cold": 0,
-          "freezing": -50
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": " {name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
         }
-    },  
-
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
     "tray": {
-        "icon-size": 13,
+        "icon-size": 20,
         "spacing": 10
     },
-    
-    "custom/mpd-prev": {
-      "format": "玲",
-      "on-click": "mpc prev"
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
     },
-
     "cpu": {
-        "interval": 10,
-        "format": " {usage}%",
-        "max-length": 10,
-        "on-click": "foot bpytop"
+        "format": "{usage}% ",
+        "tooltip": false
     },
-
-    "custom/space": {
-      "format": " "
+    "memory": {
+        "format": "{}% "
     },
-
-"custom/mpd-toggle": {
-    "format": "{icon}",
-    "return-type": "json",
-    "format-icons": {
-        "": "",
-        "Playing": "",
-        "Paused": ""
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
     },
-    "max-length":70,
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{playerName}}: {{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "on-click": "mpc toggle"
-},
-
-    "custom/mpd-next": {
-      "format": "怜",
-      "on-click": "mpc next"
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
     },
-    "mpd": {
-        "format": "{title}  ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
         },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "title-len": 22,
-        "tooltip-format": "{artist}",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
     },
-
-	"clock": {
-		"format": "󰅐 {:%H:%M}",
-        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        	"format-alt": "󰸗 {:%a %d %b}"
-	},
-	"battery": {
-        	"states": {
-            		"warning": 30,
-            		"critical": 15
-        	},
-        	"format": "{icon} {capacity}%",
-        	"format-charging": "󰂄 {capacity}%",
-        	"format-plugged": "󰂄{capacity}%",
-        	"format-alt": "{time} {icon}",
-        	"format-full": "󱈑 {capacity}%",
-        	"format-icons": ["󱊡", "󱊢", "󱊣"]
-	},
-
-	"custom/network": {
-		"format": "{}",
-		"exec": "net-waybar",
-		"interval": 2
-	},
-	"custom/network-icon": {
-		"format": "{}",
-		"exec": "net-waybar-icon",
-		"interval": 2
-	},
-
-        "pulseaudio#pulse2": {
-                "format": "{icon} ",
-                "format-muted": "󰖁 ",
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "Connected  ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-right": "bash ~/.config/rofi/wifi_menu/rofi_wifi_menu"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "{icon} {format_source}",
+        "format-muted": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -133,25 +108,36 @@
             "portable": "",
             "car": "",
             "default": ["", "", ""]
-        }
+        },
+        "on-click": "pavucontrol"
     },
-
-
-
-
-	"pulseaudio": {
-		"format": "{volume}%",
-        	"format-muted": " Muted",
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 25,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        }
+            "spotify": " ",
+            "default": " "
+        },
+        "escape": true,
+        "exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
+        "on-click": "playerctl play-pause"
+    },
+    "custom/launcher":{
+        "format": " ",
+        "on-click": "bash ~/wofi.sh",
+        "on-click-right": "killall rofi"
+    },
+    "custom/power":{
+        "format": " ",
+        "on-click": "bash ~/.config/rofi/leave/powermenu.sh",
+        "on-click-right": "killall rofi"
+    },
+    "custom/updater":{
+        "format": "  {} Updates",
+        "exec": "yay -Qu | wc -l",
+        "exec-if": "[[ $(yay -Qu | wc -l) != 0 ]]",
+        "interval": 15,
+        "on-click": "alacritty -e yay -Syu"
     }
 }
-
-

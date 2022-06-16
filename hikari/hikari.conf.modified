@@ -2,7 +2,8 @@ ui {
   border = 1
   gap = 5
   step = 100
-  font = "monospace 10"
+ # font = "monospace 10"
+  font = "mononoki Nerd Font 10"
 
   colorscheme {
     background = 0x282C34
@@ -17,30 +18,15 @@ ui {
   }
 }
 
-outputs {
-#  "*" {
-#    background = "/usr/share/backgrounds/hikari/hikari_wallpaper.png"
-#      background = "/home/marco/bg.png"
-#  }
-"eDP-1" = {
-	background = "/home/marco/bg.png"
-	position = {
-        x = 0
-		y = 0
-	      }
-      	   }
-
-"HDMI-A-1" = {  #HDMI monitor
-	   background = "/usr/share/backgrounds/hikari/hikari_wallpaper.png"
-	   position = {
-      	   x = 1920
-          y = 0
-	    }
-	  }
-}
-
 inputs {
-# how to manage 2 keyboards?d
+
+pointers {
+"System mouse" = {
+disable-while-typing = true
+       accel = 0
+       }
+       }
+
 keyboards {
 "*" = {
 xkb = {
@@ -48,6 +34,43 @@ layout = "it"
 }
 }
 }
+}
+
+outputs {
+#  "*" {
+#    background = "/usr/share/backgrounds/hikari/hikari_wallpaper.png"
+   #   background = "/home/marco/bg.png"
+#  }
+
+"eDP-1" = {
+	background = "/usr/share/backgrounds/hikari/hikari_wallpaper.png"
+	position = {
+        x = 1920
+	y = 0
+	      }
+      	   }
+
+"HDMI-A-1" = {  #HDMI monitor
+	   background = "/usr/share/backgrounds/hikari/hikari_wallpaper.png"
+	   position = {
+      	   x = 0
+           y = 0
+	    }
+	  }
+#}
+
+views {
+Wofi {
+       position = center
+       focus = true
+       }
+}
+
+actions {
+term = "$HOME/.config/scripts/shell"
+root = "$HOME/.config/scripts/shell root"
+#rofi = "$HOME/Documents/Code/scripts/hikari/rofi"
+#powr = "$HOME/Documents/Code/scripts/hikari/pm"
 }
 
 layouts {
@@ -89,12 +112,11 @@ layouts {
   g = grid
 }
 
-actions {
-  terminal = kitty
-  wofi = "wofi --show=drun --allow-images"
-}
-
-
+#actions {
+#  terminal = foot
+#  terminals = foot foot
+#  wofi = "wofi --show=drun --allow-images" 
+#}
 
 bindings {
   keyboard {
@@ -206,9 +228,8 @@ bindings {
     "LCA+q"        = quit
     "LCA+r"        = reload
 
-    "L+Return" = action-terminal
-    "A+d" = action-wofi
-
+    "L+Return" = action-term
+    "LS+Return" = action-root
 
     "A+F1" = vt-switch-to-1
     "A+F2" = vt-switch-to-2

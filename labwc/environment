@@ -1,11 +1,11 @@
 # Example environment file
 
 # Set keyboard layout to it
-XKB_DEFAULT_LAYOUT=it
+#XKB_DEFAULT_LAYOUT=it
 
 # Set two keyboard layouts and toggle between them using alt+shift
-# XKB_DEFAULT_LAYOUT=se,de
-X# KB_DEFAULT_OPTIONS=grp:alt_shift_toggle
+XKB_DEFAULT_LAYOUT=it,gb
+XKB_DEFAULT_OPTIONS=grp:alt_shift_toggle
 
 # Force firefox to use wayland backend
 MOZ_ENABLE_WAYLAND=1
