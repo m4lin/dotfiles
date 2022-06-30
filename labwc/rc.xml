@@ -22,6 +22,17 @@
     <topMaximize>yes</topMaximize>
   </snapping>
   
+	
+  <desktops>
+    <popupTime>1000</popupTime>
+    <names>
+      <name>Workspace A</name>
+      <name>Workspace B</name>
+      <name>Workspace C</name>
+      <name>Workspace D</name>
+    </names>
+  </desktops>
+	
    <!--
     Keybind actions are specified in labwc-actions(5)
     The following keybind modifiers are supported:
@@ -47,10 +58,10 @@
        <keybind key="A-Return">
       <action name="Execute"><command>kitty</command></action>
     </keybind>
-    <keybind key="A-F3">
-      <action name="Execute"><command>bemenu-run</command></action>
+    <keybind key="W-F3">
+      <action name="Execute"><command>wofi -W 220 --show=drun -I</command></action>
     </keybind>
-    <keybind key="A-F4">
+    <keybind key="W-F4">
       <action name="Close"/>
     </keybind>
     <keybind key="W-a">
@@ -101,9 +112,32 @@
     <keybind key="C-Tab">
       <action name="Execute"><command>killall -s SIGUSR1 sfwbar</command></action>
     </keybind>
+    <keybind key="W-Left">
+      <action name="GoToDesktop" to="left" />
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="SendToDesktop" to="left" />
+      <action name="GoToDesktop" to="left" />
+    </keybind>
+
+    <keybind key="W-1">
+      <action name="GoToDesktop" to="Workspace a" />
+    </keybind>
+    <keybind key="W-2">
+      <action name="GoToDesktop" to="2" />
+    </keybind>  
+    <keybind key="W-3">
+      <action name="GoToDesktop" to="3" />
+    </keybind>  
+    <keybind key="W-4">
+      <action name="GoToDesktop" to="4" />
+    </keybind>  
   </keyboard>
 
 
+
+
+	
   <!--
     Multiple <mousebind> can exist within one <context>
     Multiple <actions> can exist within one <mousebind>

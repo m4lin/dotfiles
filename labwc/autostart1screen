@@ -13,12 +13,12 @@ sfwbar -f /home/marco/.config/sfwbar/sfwbar.config.old &
 #     output HDMI-A-1 position 1366,0
 #     output eDP-1 position 0,0
 #   }
-kanshi >/dev/null 2>&1 &
+#kanshi >/dev/null 2>&1 &
 
 # Enable notifications. Typically GNOME/KDE application notifications go
 # through the org.freedesktop.Notifications D-Bus API and require a client such
 # as mako to function correctly. Thunderbird is an example of this.
-mako >/dev/null 2>&1 &
+#mako >/dev/null 2>&1 &
 
 # Lock screen after 5 minutes; turn off display after another 5 minutes.
 #
@@ -28,10 +28,10 @@ mako >/dev/null 2>&1 &
 # (since a837fef). Instead use a wlr-output-power-management client such as
 # https://git.sr.ht/~leon_plickat/wlopm
 swayidle -w \
-	timeout 300 'swaylock -f '-i /home/marco/bg2.jpg' \
+	timeout 300 'swaylock -f -c 000000' \
 	timeout 600 'wlopm --off \*' \
 	resume 'wlopm --on \*' \
-	before-sleep 'swaylock -f -i /home/marco/bg2.jpg'' >/dev/null 2>&1 &
+	before-sleep 'swaylock -f -c 000000' >/dev/null 2>&1 &
 
 # Start devmon
 devmon&
