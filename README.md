@@ -4,8 +4,9 @@ fvwm + latte + sakura + yakuake
 
 1 Urgent stuffs
 
--	[ ] keymap IT and others and others
-
+-	[x] keymap IT 
+- [ ] latte dock edit icons (remove firefox)
+- [ ] tint2 from addy's Livia
 
 including wofi menus
 
