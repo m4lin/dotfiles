@@ -1,5 +1,12 @@
 # TODO List
 
+fvwm + latte + sakura + yakuake
+
+1 Urgent stuffs
+
+-	[ ] keymap IT
+
+
 including wofi menus
 
 1. configure foot on both machines
