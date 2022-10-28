@@ -4,7 +4,7 @@ fvwm + latte + sakura + yakuake
 
 1 Urgent stuffs
 
--	[ ] keymap IT and others
+-	[ ] keymap IT and others and others
 
 
 including wofi menus
