@@ -34,6 +34,7 @@ AddToFunc InitFunction
 + I Exec exec emacs --daemon &
 + I Exec exec feh --bg-scale .fvwm/images/drone.png &
 + I Exec exec latte-dock &
++ I Exec exec setxkbmap it &
 # + I Exec exec tint2 &
 
 ## To Create a Thumbnail on Minimize
