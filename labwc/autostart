@@ -3,7 +3,7 @@
 # Launch a panel such as yambar or waybar.
 #waybar >/dev/null 2>&1 &
 yambar &
-sfwbar -f /home/marco/.config/sfwbar/sfwbar.config.old &
+sfwbar -f /home/marco/.config/sfwbar/sfwbar.config &
 
 
 # Configure output directives such as mode, position, scale and transform.

@@ -10,8 +10,8 @@ fvwm + latte + sakura + yakuake
 
 including wofi menus
 
-1. configure foot on both machines
-  - [x] font??
+1. configure keybindings
+  - [] sxhkd 
 2. configure Hikari and River
   - [x] Labwc, installed and functional, updated
   - [] Hikari on Void

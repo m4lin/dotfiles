@@ -121,7 +121,7 @@
     </keybind>
 
     <keybind key="W-1">
-      <action name="GoToDesktop" to="Workspace a" />
+      <action name="GoToDesktop" to="1" />
     </keybind>
     <keybind key="W-2">
       <action name="GoToDesktop" to="2" />
