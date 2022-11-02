@@ -8,6 +8,8 @@ fvwm + latte + sakura + yakuake
 - [ ] latte dock edit icons (remove firefox)
 - [ ] tint2 from addy's Livia
 
+test
+
 including wofi menus
 
 1. configure keybindings
