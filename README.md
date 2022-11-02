@@ -8,7 +8,7 @@ fvwm + latte + sakura + yakuake
 - [ ] latte dock edit icons (remove firefox)
 - [ ] tint2 from addy's Livia
 
-test
+test2 token changed
 
 including wofi menus
 
