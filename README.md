@@ -1,5 +1,7 @@
 # TODO List
 
+RESET
+
 fvwm + latte + sakura + yakuake
 
 1 Urgent stuffs
@@ -8,7 +10,6 @@ fvwm + latte + sakura + yakuake
 - [ ] latte dock edit icons (remove firefox)
 - [ ] tint2 from addy's Livia
 
-test2 token changed
 
 including wofi menus
 
